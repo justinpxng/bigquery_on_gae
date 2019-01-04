@@ -1,21 +1,29 @@
 <html>
   <head>
-    <title>Submitted form</title>
+    <title>Submitted form BQ</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
   </head>
   <body>
     <div id="container">
       <div class="pagetitle">
-	<h1>Form submitted</h1>
+	<h1>Top Stack Overflow Questions</h1>
       </div>
       <div id="main">
-	<p>Thanks for your submission, {{name}}!</p>
-	<p>Here's a review of the information that you sent:</p>
+	<p>You queried: {{tag}}</p>
+	<p>Results:</p>
 	<p>
-	  <strong>Name</strong>: {{name}} <br>
-	  <strong>Email</strong>: {{email}} <br>
-	  <strong>Website URL</strong>: {{site}} <br>
-	  <strong>Comments</strong>: {{comments}}
+	  <table class="centered thick-border">
+	    <tr>
+	      <th>Title</th>
+	      <th>View Count</th>
+	    </tr>
+	    {% for k, v  in titles.items() %}
+	    <tr>
+	      <td>{{ k }}</td>
+	      <td>{{ v }}</td>
+	    </tr>
+	    {% endfor %}
+	    </table>
 	</p>
       </div>
     </div>
